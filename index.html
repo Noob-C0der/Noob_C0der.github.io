@@ -5,48 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>KlangKunst e.V.</title>
 </head>
 <body>
-    <div id="hamburger-menu">
-        ☰
-    </div>
-    <div id="side-menu">
-        <h2>Willkommen</h2>
-        <p>Herzlich Willkommen bei KlangKunst!</p>
-        <a href="#events">Events</a>
-        <a href="impressum.html">Impressum</a>
-    </div>
-    <header>
-        <h1>KlangKunst e.V.</h1>
+    <header class="main-header">
+        <div class="logo-area">
+            <span class="logo-icon"><i class="fas fa-music"></i></span>
+            <span class="logo-text">KlangKunst</span>
+        </div>
         <nav>
             <ul>
+                <li><a href="#about">Über uns</a></li>
                 <li><a href="#events">Events</a></li>
                 <li><a href="impressum.html">Impressum</a></li>
             </ul>
         </nav>
     </header>
-    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Wir schaffen spektakuläre<br>Musik-Erlebnisse.</h1>
+            <p>KlangKunst e.V. fördert elektronische Musik und Kultur mit Leidenschaft und Innovation.</p>
+            <a href="#events" class="cta-btn">Jetzt entdecken</a>
+        </div>
+        <div class="hero-visual">
+            <!-- Platz für Illustration oder SVG-Elemente, z.B. Musiknoten, Planeten, etc. -->
+            <div class="planet"></div>
+            <div class="note"></div>
+            <div class="star"></div>
+        </div>
+        <div class="wave-divider"></div>
+    </section>
     <main>
         <section id="about">
             <h2>Über uns</h2>
-            <p>Herzlich Willkommen bei KlangKunst! Wir setzen uns für den Erhalt und die Verbreitung von elektronischer Musik aller Art ein. 
-                
-            </p>
+            <p>Herzlich Willkommen bei KlangKunst! Wir setzen uns für den Erhalt und die Verbreitung von elektronischer Musik aller Art ein.</p>
         </section>
-        
         <section id="events">
             <h2>Unsere Events</h2>
             <p>Hier werden zukünftige Veranstaltungen angekündigt.</p>
         </section>
     </main>
-    
-    <footer id="impressum">
-        <h2>Impressum</h2>
-        <p>Angaben gemäß § 5 TMG...</p>
+    <footer>
         <div class="social-icons">
             <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
         </div>
     </footer>
+    <script>
+    window.addEventListener('scroll', function() {
+        if(window.scrollY > 10) {
+            document.body.classList.add('scrolled');
+        } else {
+            document.body.classList.remove('scrolled');
+        }
+    });
+    </script>
 </body>
 </html>
