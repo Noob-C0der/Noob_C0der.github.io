@@ -39,6 +39,15 @@
         <section id="about">
             <h2>Über uns</h2>
             <p>Herzlich Willkommen bei KlangKunst! Wir setzen uns für den Erhalt und die Verbreitung von elektronischer Musik aller Art ein.</p>
+            <div class="gallery">
+                <button class="gallery-btn gallery-btn-left" aria-label="Vorheriges Bild">&#8592;</button>
+                <div class="gallery-image-wrapper">
+                    <img src="gallery/1.jpg" alt="KlangKunst Impression 1" class="gallery-image active">
+                    <img src="gallery/2.jpg" alt="KlangKunst Impression 2" class="gallery-image">
+                    <img src="gallery/3.jpg" alt="KlangKunst Impression 3" class="gallery-image">
+                </div>
+                <button class="gallery-btn gallery-btn-right" aria-label="Nächstes Bild">&#8594;</button>
+            </div>
         </section>
         <section id="events">
             <h2>Unsere Events</h2>
@@ -59,6 +68,43 @@
             document.body.classList.remove('scrolled');
         }
     });
+
+    // Galerie Script
+    (function() {
+        const images = document.querySelectorAll('.gallery-image');
+        const leftBtn = document.querySelector('.gallery-btn-left');
+        const rightBtn = document.querySelector('.gallery-btn-right');
+        let current = 0;
+        let timer;
+
+        function showImage(idx) {
+            images.forEach((img, i) => {
+                img.classList.toggle('active', i === idx);
+            });
+        }
+        function next() {
+            current = (current + 1) % images.length;
+            showImage(current);
+        }
+        function prev() {
+            current = (current - 1 + images.length) % images.length;
+            showImage(current);
+        }
+        function resetTimer() {
+            clearInterval(timer);
+            timer = setInterval(next, 5000);
+        }
+        leftBtn.addEventListener('click', function() {
+            prev();
+            resetTimer();
+        });
+        rightBtn.addEventListener('click', function() {
+            next();
+            resetTimer();
+        });
+        showImage(current);
+        timer = setInterval(next, 5000);
+    })();
     </script>
 </body>
 </html>
