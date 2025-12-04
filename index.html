@@ -10,7 +10,7 @@
 <body>
     <header class="main-header">
         <div class="logo-area">
-            <span class="logo-icon"><i class="fas fa-music"></i></span>
+            <img src="KlangKunst_Logo_edited.png" alt="KlangKunst Logo" class="logo-image">
             <span class="logo-text">KlangKunst</span>
         </div>
         <nav>
@@ -29,39 +29,53 @@
             <a href="events.html" class="cta-btn">Jetzt entdecken</a>
         </div>
         <div class="hero-visual">
-            <!-- Platz für Illustration oder SVG-Elemente, z.B. Musiknoten, Planeten, etc. -->
-            <div class="planet"></div>
-            <div class="note"></div>
-            <div class="star"></div>
+            <!-- KlangKunst Logo animations -->
+            <img src="KlangKunst_Logo_edited.png" alt="KlangKunst" class="floating-logo logo-1">
+            <img src="KlangKunst_Logo_edited.png" alt="KlangKunst" class="floating-logo logo-2">
+            <img src="KlangKunst_Logo_edited.png" alt="KlangKunst" class="floating-logo logo-3">
         </div>
         <div class="wave-divider"></div>
     </section>
         <main>
         <section id="about">
             <h2><i class="fas fa-music"></i> Über uns</h2>
-            <p>Herzlich Willkommen bei KlangKunst! Wir setzen uns für den Erhalt und die Verbreitung von elektronischer Musik aller Art ein.</p>
+            <h3>Wir sind KlangKunst!</h3>
             
             <!-- Festival Stats -->
             <div class="stats-container">
                 <div class="stat-item">
-                    <div class="stat-number"><i class="fas fa-calendar"></i> 25+</div>
+                    <div class="stat-number"><i class="fas fa-calendar"></i> 4</div>
                     <div class="stat-label">Festivals organisiert</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number"><i class="fas fa-users"></i> 50k+</div>
+                    <div class="stat-number"><i class="fas fa-users"></i> 1K+</div>
                     <div class="stat-label">Besucher erreicht</div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number"><i class="fas fa-headphones"></i> 200+</div>
-                    <div class="stat-label">Künstler featured</div>
+            </div>
+        </section>
+        
+        <!-- Gallery Section -->
+        <section class="gallery-section">
+            <h2><i class="fas fa-images"></i> Galerie</h2>
+            <div class="gallery-container">
+                <button class="gallery-btn gallery-btn-left"><i class="fas fa-chevron-left"></i></button>
+                <div class="gallery-wrapper">
+                    <img src="gallery/308A9BC7-EBAC-4DE1-95B9-DA083D59CA43.jpeg" alt="Festival Moment 1" class="gallery-image active">
+                    <img src="gallery/DSC_0095.jpg" alt="Festival Moment 2" class="gallery-image">
+                    <img src="gallery/DSC_0103.jpg" alt="Festival Moment 3" class="gallery-image">
+                    <img src="gallery/DSC_0112.jpg" alt="Festival Moment 4" class="gallery-image">
+                    <img src="gallery/DSC_0132 (1).jpg" alt="Festival Moment 5" class="gallery-image">
+                    <img src="gallery/DSC_0149.jpg" alt="Festival Moment 6" class="gallery-image">
                 </div>
+                <button class="gallery-btn gallery-btn-right"><i class="fas fa-chevron-right"></i></button>
             </div>
         </section>
     </main>
     <footer>
         <div class="social-icons">
-            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/klangkunst_e.v/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://chat.whatsapp.com/F8thLcZehnnESr4AxUWyOu" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://l.instagram.com/?u=https%3A%2F%2Fchat.whatsapp.com%2FF8thLcZehnnESr4AxUWyOu%3Futm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio%26fbclid%3DPAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnU2U6NKM_qXqIGqJJ6ezzDRKZqPf_GLridEMqQTKIpGmhEzvAbj-2Oty6R-U_aem_9wqxN-X64hPEjEzdhiyBaQ&e=AT1Q7mluz9i8p5ydv25ZqyMFeG9R3JyTkSo-lxrrlWOfMPjrDZlfo0kb3-hKQT2DdeJtTinIhy9gP0GglX7W8e-NK6n9lU3VyJ77L4vcVu_LLpRtLfl4bXMkMg" target="_blank"><i class="fab fa-facebook"></i></a>
         </div>
     </footer>
     <script>
@@ -73,11 +87,14 @@
         }
     });
 
-    // Galerie Script
+    // Galerie Script mit Auto-Rotation
     (function() {
         const images = document.querySelectorAll('.gallery-image');
         const leftBtn = document.querySelector('.gallery-btn-left');
         const rightBtn = document.querySelector('.gallery-btn-right');
+        
+        if (!images.length || !leftBtn || !rightBtn) return;
+        
         let current = 0;
         let timer;
 
@@ -86,26 +103,32 @@
                 img.classList.toggle('active', i === idx);
             });
         }
+        
         function next() {
             current = (current + 1) % images.length;
             showImage(current);
         }
+        
         function prev() {
             current = (current - 1 + images.length) % images.length;
             showImage(current);
         }
+        
         function resetTimer() {
             clearInterval(timer);
-            timer = setInterval(next, 5000);
+            timer = setInterval(next, 5000); // Auto-rotation alle 5 Sekunden
         }
+        
         leftBtn.addEventListener('click', function() {
             prev();
             resetTimer();
         });
+        
         rightBtn.addEventListener('click', function() {
             next();
             resetTimer();
         });
+        
         showImage(current);
         timer = setInterval(next, 5000);
     })();
