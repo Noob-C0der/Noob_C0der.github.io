@@ -236,7 +236,7 @@ header nav ul li a:hover {
 
 .floating-logo {
     position: absolute;
-    height: 160px;
+    height: 180px;
     width: auto;
     object-fit: contain;
     filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2)) drop-shadow(0 0 3px rgba(0,0,0,0.3));
@@ -246,24 +246,25 @@ header nav ul li a:hover {
 }
 
 .logo-1 {
-    left: 20px;
-    top: 120px;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%) translateY(-50%);
 }
 
 .logo-2 {
-    right: 80px;
-    top: 60px;
-    height: 120px;
+    left: 20%;
+    top: 70%;
+    height: 140px;
 }
 
 .logo-3 {
-    left: 80px;
-    top: 30px;
-    height: 90px;
+    right: 15%;
+    top: 25%;
+    height: 110px;
 }
 
 body.scrolled .logo-1 {
-    transform: translateY(-30px) scale(1.08) rotate(-8deg);
+    transform: translateX(-50%) translateY(calc(-50% - 30px)) scale(1.08) rotate(-8deg);
 }
 
 body.scrolled .logo-2 {
@@ -985,21 +986,22 @@ body {
     }
     
     .logo-1 {
-        height: 110px;
-        left: 10px;
-        top: 70px;
+        height: 130px;
+        left: 50%;
+        top: 40%;
+        transform: translateX(-50%) translateY(-50%);
     }
     
     .logo-2 {
-        height: 70px;
-        right: 30px;
-        top: 40px;
+        height: 85px;
+        left: 15%;
+        top: 70%;
     }
     
     .logo-3 {
-        height: 50px;
-        left: 60px;
-        top: 20px;
+        height: 65px;
+        right: 15%;
+        top: 20%;
     }
     
     main {
