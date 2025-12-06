@@ -252,14 +252,14 @@ header nav ul li a:hover {
 }
 
 .logo-2 {
-    left: 20%;
-    top: 70%;
+    left: 0%;
+    bottom: 5%;
     height: 140px;
 }
 
 .logo-3 {
-    right: 15%;
-    top: 25%;
+    right: 0%;
+    top: 0%;
     height: 110px;
 }
 
@@ -988,20 +988,20 @@ body {
     .logo-1 {
         height: 130px;
         left: 50%;
-        top: 40%;
+        top: 50%;
         transform: translateX(-50%) translateY(-50%);
     }
     
     .logo-2 {
         height: 85px;
-        left: 15%;
-        top: 70%;
+        left: 5%;
+        bottom: 5%;
     }
     
     .logo-3 {
         height: 65px;
-        right: 15%;
-        top: 20%;
+        right: 5%;
+        top: 5%;
     }
     
     main {
